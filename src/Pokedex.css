@@ -45,9 +45,9 @@ label {
 .pokemon {
   border-radius: 3rem;
   box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 5px 5px 16px 3px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 5px 5px 6px 2px rgba(0, 0, 0, 0.3);
   height: 19rem;
-  margin: 5rem 0.4rem;
+  margin: 5rem 0.6rem;
   transition: box-shadow 0.2s ease-in-out;
   width: 20rem;
 }
