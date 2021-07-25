@@ -6,7 +6,7 @@
 
 html {
   font-size: 62.5%;
-  width: 100vw;
+  width: 99vw;
 }
 
 h1 {
@@ -38,7 +38,7 @@ label {
   flex-wrap: wrap;
   font-size: 1.4rem;
   margin: 1rem auto;
-  width: 95%;
+  width: 90%;
   justify-content: center;
 }
 
@@ -47,7 +47,7 @@ label {
   box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 5px 5px 16px 3px rgba(0, 0, 0, 0.3);
   height: 19rem;
-  margin: 5rem 0.8rem;
+  margin: 5rem 0.4rem;
   transition: box-shadow 0.2s ease-in-out;
   width: 20rem;
 }
