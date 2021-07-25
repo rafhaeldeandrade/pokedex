@@ -13,7 +13,7 @@ class Header extends Component {
   }
 
   updatePokemonName(e) {
-    this.props.updateName(e.target.value);
+    this.props.updateName(e.target.value.toLowerCase());
   }
   render() {
     const types = [
