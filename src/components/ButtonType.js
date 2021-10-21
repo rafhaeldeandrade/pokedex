@@ -1,18 +1,10 @@
-import React, { Component } from 'react';
+import React, { useContext } from 'react';
+import PokedexContext from '../context/PokedexContext';
 
-class ButtonType extends Component {
-  constructor(props) {
-    super(props);
-    this.handleClick = this.handleClick.bind(this);
-  }
+const ButtonType = ({ type }) => {
+  const { setPokeType }  = useContext(PokedexContext);
 
-  handleClick(e) {
-    this.props.updateParent(e.target.innerText);
-    Array.from(document.querySelectorAll('.btn-type-active')).map((el) => el.classList.remove('btn-type-active'));
-    e.target.classList.toggle('btn-type-active');
-  }
-  
-  renderBtn(tipo) {
+  const renderBtn = (pokeType) => {
     const types = {
       bug: {background: '#A8B820'},
       dragon: {background: '#7038F8'},
@@ -33,16 +25,27 @@ class ButtonType extends Component {
       water: {background: '#6890F0'},
     }
 
-    return types[tipo]
-    ? {backgroundColor: types[tipo].background}
+    return types[pokeType]
+    ? {backgroundColor: types[pokeType].background}
     : {backgroundColor: '#fff', border: '1px solid #000'}
   }
-  render() {
-    const { type } = this.props;
-    return (
-      <button className="btn-type" onClick={this.handleClick} style={ this.renderBtn(type) }>{type}</button>
-    )
-  }
+
+  const handleClick = (e) => {
+    setPokeType(e.target.innerHTML);
+    Array.from(document.querySelectorAll('.btn-type-active'))
+      .map((el) => el.classList.remove('btn-type-active'));
+    e.target.classList.toggle('btn-type-active');
+  };
+
+  return (
+    <button
+      className="btn-type"
+      onClick={ handleClick }
+      style={ renderBtn(type) }
+    >
+      {type}
+    </button>
+  )
 }
 
 export default ButtonType;

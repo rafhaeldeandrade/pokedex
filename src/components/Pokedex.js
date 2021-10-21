@@ -1,55 +1,38 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import PokedexContext from '../context/PokedexContext';
 import Header from './Header';
 import Pokemon from './Pokemon';
 import pokemons from './data';
 import './Pokedex.css';
 
-export default class Pokedex extends React.Component {
-  constructor(props) {
-    super(props);
-    this.pokeMap = this.pokeMap.bind(this);
-    this.setTypeState = this.setTypeState.bind(this);
-    this.setNameState = this.setNameState.bind(this);
-    this.state = {
-      type: 'all',
-      name: '',
-    }
-  }
+const Pokedex = () => {
+  const { pokeType, pokeName } = useContext(PokedexContext);
 
-  setTypeState(childData) {
-    this.setState({ type: childData });
-  }
-
-  setNameState(childData) {
-    this.setState({ name: childData });
-  }
-
-  pokeMap() {
-    const { type, name } = this.state;
-    if (type === 'all') {
-      if (name !== '') {
+  const pokeMap = () => {
+    if (pokeType === 'all') {
+      if (pokeName !== '') {
         return pokemons
-        .filter((el) => el.name.includes(name))
-        .map((el) => <Pokemon updateGrandParent={this.setTypeState} pokemon={el} key={el.name} />)
+        .filter((el) => el.name.includes(pokeName))
+        .map((el) => <Pokemon pokemon={el} key={el.name} />)
       }
-      return pokemons.map((el) => <Pokemon updateGrandParent={this.setTypeState} pokemon={el} key={el.name} />);
+      return pokemons.map((el) => <Pokemon pokemon={el} key={el.name} />);
     }
     return pokemons.filter((pokeObj) => {
-      const some = pokeObj.types.some((pokeType) => pokeType.type.name === type);
-      const hasName = pokeObj.name.includes(name);
+      const some = pokeObj.types.some((pType) => pType.type.name === pokeType);
+      const hasName = pokeObj.name.includes(pokeName);
       if (some && hasName) return pokeObj;
       return undefined;
-    }).map((el) => <Pokemon updateGrandParent={this.setTypeState} pokemon={el} key={el.name} />);
+    }).map((el) => <Pokemon pokemon={el} key={el.name} />);
   }
 
-  render() {
-    return (
-      <div>
-        <Header updateName={this.setNameState} updateGrandParent={this.setTypeState}/>
-        <div className="pokedex">
-          {this.pokeMap()}
-        </div>
+  return (
+    <div>
+      <Header />
+      <div className="pokedex">
+        {pokeMap()}
       </div>
-    );
-  }
+    </div>
+  );
 }
+
+export default Pokedex;
