@@ -1,23 +1,52 @@
-# Getting Started with
+# Simple Pokedex
 
-In the project directory, you can run:
+<img src="https://i.imgur.com/ScPp289.png" alt="exemplo imagem">
 
-### `npm start`
+### Ajustes e melhorias
+O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [ ] Todos os pokémons, não só os 150 primeiros;
+- [ ] Estilizar os inputs/buttons com material UI.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 💻 Pré-requisitos
 
-### `npm run build`
+Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Node v14.0+
+- NPM v6.0+
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🚀 Instalando Simple Pokedex
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Para instalar o Simple Pokedex, siga estas etapas:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Clone o repositório:
+```
+HTTPS: git clone https://github.com/rafhaeldeandrade/pokedex.git
+OU
+SSH: git clone git@github.com:rafhaeldeandrade/pokedex.git
+```
+- Instale as dependências:
+```
+cd pokedex
+npm install
+```
+- Inicie o projeto:
+```
+npm start
+```
+
+</ul>
+
+## 📫 Contribuindo
+<!---Se o seu README for longo ou se você tiver algum processo ou etapas específicas que deseja que os contribuidores sigam, considere a criação de um arquivo CONTRIBUTING.md separado--->
+Para contribuir com Simple Pokedex, siga estas etapas:
+
+1. Bifurque este repositório.
+2. Crie um branch: `git checkout -b <nome_branch>`.
+3. Faça suas alterações e confirme-as: `git commit -m '<mensagem_commit>'`
+4. Envie para o branch original: `git push origin <nome_do_projeto> / <local>`
+5. Crie a solicitação de pull.
+
+Como alternativa, consulte a documentação do GitHub em [como criar uma solicitação pull](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
+
+[⬆ Voltar ao topo](#simple-pokedex)<br>
